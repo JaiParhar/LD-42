@@ -38,7 +38,6 @@ int main(int argc, char* args[])
 {
 	if(init()){
 		gameLoop();
-
 		close();
 	}
 	return 0;

@@ -1,2 +1,13 @@
-﻿  LD-42.vcxproj -> C:\Users\Kush\Desktop\Ludum Dare\LD-42\LD-42\Debug\LD-42.exe
+﻿  main.cpp
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(28): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(29): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(30): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(31): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(32): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(33): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(41): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\corecrt_math_defines.h(22): warning C4005: 'M_PI': macro redefinition
+  c:\users\kush\desktop\ludum dare\ld-42\sdl2-2.0.8\include\sdl_stdinc.h(499): note: see previous definition of 'M_PI'
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\main.cpp(90): warning C4715: 'init': not all control paths return a value
+  LD-42.vcxproj -> C:\Users\Kush\Desktop\Ludum Dare\LD-42\LD-42\Debug\LD-42.exe
   LD-42.vcxproj -> C:\Users\Kush\Desktop\Ludum Dare\LD-42\LD-42\Debug\LD-42.pdb (Partial PDB)
