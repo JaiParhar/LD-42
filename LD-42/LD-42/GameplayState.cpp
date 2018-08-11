@@ -82,13 +82,13 @@ void GameplayState::update()
 	player.update();
 	camera->update();
 
-	//terrain.updateArea(0, 0, 5, 5);
+	terrain.updateArea(0, 0, 5, 5);
 
 }
 void GameplayState::render()
 {
 	//RENDER TERRAIN
-	/*for (int i = 0; i < terrain.getHeight() * terrain.getHeight(); i++)
+	for (int i = 0; i < terrain.getHeight() * terrain.getHeight(); i++)
 	{
 		int y = floor(i / terrain.getWidth());
 		int x = i % terrain.getWidth();
@@ -101,7 +101,7 @@ void GameplayState::render()
 				renderer->renderSDLTexture(terrainSheet.getSpritesheet(), camera, x*TILESIZE, y*TILESIZE, TILESIZE, TILESIZE, terrainSheet.getSprite(s->getAnimation()->getFrame()));
 			}
 		}
-	}*/
+	}
 
 	//RENDER PLAYER
 	renderer->renderSDLRectangle(camera, player.getX()*TILESIZE, player.getY()*TILESIZE, TILESIZE, TILESIZE);

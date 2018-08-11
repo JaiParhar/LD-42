@@ -33,8 +33,6 @@ void Terrain::loadTileMap(std::string fPath)
 	const static int H = height;
 	tileMap = new Tile*[W*H];
 
-	printf("%d\n", width);
-
 	//Loading tilemaps from map data
 	for (int y = 0; y < height; y++) 
 	{
@@ -42,8 +40,7 @@ void Terrain::loadTileMap(std::string fPath)
 		for (int x = 0; x < width; x++) 
 		{
 			std::string idStr = splitString(currLine, " ", x, width);
-			printf("%s %d\n", idStr.c_str(), x);
-			int id = FLOOR_TILE;
+			int id = std::stoi(idStr);
 
 			Animation* a = new Animation;
 			switch (id)
@@ -51,7 +48,7 @@ void Terrain::loadTileMap(std::string fPath)
 			case FLOOR_TILE:
 				tileMap[y*width + x] = new Tile;
 				a->init(1000);
-				a->addFrame(0);
+				a->addFrame(1);
 				a->addFrame(2);
 				tileMap[y*width + x]->init(x, y, a, false, FLOOR_TILE);
 				break;
@@ -66,7 +63,6 @@ void Terrain::loadTileMap(std::string fPath)
 
 			default:
 				tileMap[y*width + x] = new Tile;
-				
 				a->init(1000);
 				a->addFrame(0);
 				tileMap[y*width + x]->init(x, y, a, false, NULL_TILE);
@@ -74,41 +70,6 @@ void Terrain::loadTileMap(std::string fPath)
 			}
 		}
 	}
-
-
-
-
-	/*for (int i = 0; i < height*width; i++)
-	{
-		int y = floor(i / width);
-		int x = i % width;
-
-		
-
-
-
-
-
-
-
-		if (getPixelColor(map, x, y).r == 0 && getPixelColor(map, x, y).g == 255 && getPixelColor(map, x, y).b == 0)
-		{
-			tileMap[i] = new Tile;
-			Animation* a = new Animation;
-			a->init(1000);
-			a->addFrame(0);
-			a->addFrame(2);
-			tileMap[i]->init(x, y, a, false, FLOOR_TILE);
-		}
-		else
-		{
-			tileMap[i] = new Tile;
-			Animation* a = new Animation;
-			a->init(10000);
-			a->addFrame(1);
-			tileMap[i]->init(x, y, a, true, NULL_TILE);
-		}
-	}*/
 }
 
 Tile** Terrain::getTileMap()
