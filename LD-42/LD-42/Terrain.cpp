@@ -27,11 +27,13 @@ void Terrain::loadTileMap(std::string fPath)
 			++width;
 		}
 	}
-	width+=2;
+	width++;
 	
 	const static int W = width;
 	const static int H = height;
 	tileMap = new Tile*[W*H];
+
+	printf("%d\n", width);
 
 	//Loading tilemaps from map data
 	for (int y = 0; y < height; y++) 
@@ -39,10 +41,38 @@ void Terrain::loadTileMap(std::string fPath)
 		std::string currLine = lines.at(y);
 		for (int x = 0; x < width; x++) 
 		{
-			std::string id = splitString(currLine, " ", x, width);
-			printf("%s ", id.c_str());
+			std::string idStr = splitString(currLine, " ", x, width);
+			printf("%s %d\n", idStr.c_str(), x);
+			int id = FLOOR_TILE;
+
+			Animation* a = new Animation;
+			switch (id)
+			{
+			case FLOOR_TILE:
+				tileMap[y*width + x] = new Tile;
+				a->init(1000);
+				a->addFrame(0);
+				a->addFrame(2);
+				tileMap[y*width + x]->init(x, y, a, false, FLOOR_TILE);
+				break;
+
+			case R_WALL_TILE:
+				tileMap[y*width + x] = new Tile;
+				a->init(1000);
+				a->addFrame(3);
+				a->addFrame(4);
+				tileMap[y*width + x]->init(x, y, a, false, R_WALL_TILE);
+				break;
+
+			default:
+				tileMap[y*width + x] = new Tile;
+				
+				a->init(1000);
+				a->addFrame(0);
+				tileMap[y*width + x]->init(x, y, a, false, NULL_TILE);
+				break;
+			}
 		}
-		printf("\n");
 	}
 
 

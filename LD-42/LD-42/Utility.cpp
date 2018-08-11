@@ -117,7 +117,7 @@ std::string splitString(std::string s, std::string delimiter, int iteration, int
 {
 	size_t pos = 0;
 	std::string token;
-	for (int i = 0; i < iteration; i++) 
+	for (int i = 0; i <= iteration; i++) 
 	{
 		if ((pos = s.find(delimiter)) != std::string::npos) {
 			token = s.substr(0, pos);
