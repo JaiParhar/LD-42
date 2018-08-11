@@ -12,7 +12,7 @@ const int WINDOW_HEIGHT = 572;
 
 const int SCREEN_WIDTH = 1280;
 const int SCREEN_HEIGHT = 720;
-const char * TITLE = "SUCCCCC";
+const char * TITLE = "Event Horizon";
 
 bool quit = false;
 

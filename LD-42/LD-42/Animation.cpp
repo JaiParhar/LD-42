@@ -1,12 +1,5 @@
 #include "Animation.h"
 
-
-
-Animation::Animation()
-{
-}
-
-
 bool Animation::init(int speed, bool startPlayingAnimation)
 {
 	playingAnimation = startPlayingAnimation;
@@ -79,8 +72,4 @@ int Animation::getFrame()
 int Animation::getDefaultFrame()
 {
 	return frames.at(0);
-}
-
-Animation::~Animation()
-{
 }

@@ -5,7 +5,6 @@
 class Animation
 {
 public:
-	Animation();
 	Timer animationTimer;
 	int currentFrame;
 	std::vector<int> frames;
@@ -20,7 +19,5 @@ public:
 	void startIndividualAnimation();
 	int getFrame();
 	int getDefaultFrame();
-
-	~Animation();
 };
 
