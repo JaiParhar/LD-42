@@ -1,14 +1,4 @@
-﻿  Player.cpp
-  Generating Code...
-  Compiling...
-  main.cpp
-  GameplayState.cpp
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gameplaystate.cpp(73): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gameplaystate.cpp(87): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  GameStateManager.cpp
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gamestatemanager.cpp(20): warning C4018: '<': signed/unsigned mismatch
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gamestatemanager.cpp(32): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
+﻿  main.cpp
 c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\main.cpp(90): warning C4715: 'init': not all control paths return a value
   LD-42.vcxproj -> C:\Users\Kush\Desktop\Ludum Dare\LD-42\LD-42\Debug\LD-42.exe
   LD-42.vcxproj -> C:\Users\Kush\Desktop\Ludum Dare\LD-42\LD-42\Debug\LD-42.pdb (Partial PDB)
