@@ -19,11 +19,9 @@ bool GameplayState::init(int* cS, Renderer* r, Camera* c)
 	
 	//ONLY WORKS WITH 32 BIT IMAGES - MAKE SURE LEVEL IS 32 BIT
 	terrain.init("./res/level_map.png");
-	player.init((terrain.getWidth()*terrain.getTileWidth())/2, ((terrain.getHeight()*terrain.getTileHeight()) / 2 )+250, 100, 100, 100, 100);
+	player.init(0, 0);
 	
 	player.move(DOWN);
-	player.stopMovingY();
-	player.stopMovingX();
 	
 	inputM.init();
 
@@ -53,13 +51,7 @@ void GameplayState::input(SDL_Event* event)
 	else if (inputM.keyPressed[K_DOWN])
 	{
 		player.move(DOWN);
-	}
-	else
-	{
-		player.stopMovingY();
-	}
-	
-	if (inputM.keyPressed[K_LEFT])
+	} else if (inputM.keyPressed[K_LEFT])
 	{
 		player.move(LEFT);
 	}
@@ -67,52 +59,13 @@ void GameplayState::input(SDL_Event* event)
 	{
 		player.move(RIGHT);
 	}
-	else
-	{
-		player.stopMovingX();
-	}
 }
 
 void GameplayState::update()
 {
 	player.update();
 
-	if (player.getX() < 0)
-	{
-		player.setX(0);
-	}
-	else if (player.getX() + player.getW() > terrain.getTileWidth()*terrain.getWidth())
-	{
-		player.setX(terrain.getTileWidth() * terrain.getWidth() - player.getW());
-	}
-
-	if (player.getY() < 0)
-	{
-		player.setY(0);
-	}
-	else if (player.getY() + player.getH() > terrain.getTileHeight()*terrain.getHeight())
-	{
-		player.setY(terrain.getTileHeight() * terrain.getHeight() - player.getH());
-	}
-
-	camera->setCameraCenterPos(player.getCenterX(), player.getCenterY());
-	if (camera->getX() < 0)
-	{
-		camera->setCameraPos(0, camera->getY());
-	}
-	else if (camera->getX()+camera->getScreenWidth() > terrain.getTileWidth()*terrain.getWidth())
-	{
-		camera->setCameraPos(terrain.getTileWidth() * terrain.getWidth() - camera->getScreenWidth(), camera->getY());
-	}
-
-	if (camera->getY() < 0)
-	{
-		camera->setCameraPos(camera->getX(), 0);
-	}
-	else if (camera->getY()+camera->getScreenHeight() > terrain.getTileHeight()*terrain.getHeight())
-	{
-		camera->setCameraPos(camera->getX(), terrain.getTileHeight() * terrain.getHeight() - camera->getScreenHeight());
-	}
+	camera->setCameraCenterPos(0, 0);
 }
 void GameplayState::render()
 {
@@ -122,17 +75,17 @@ void GameplayState::render()
 	{
 		int y = floor(i / terrain.getWidth());
 		int x = i % terrain.getWidth();
-		if ((abs(camera->getX() - x*terrain.getTileWidth()) < (camera->getScreenWidth()) + terrain.getTileWidth()) &&
-			(abs(camera->getY() - y*terrain.getTileHeight()) < (camera->getScreenHeight()) + terrain.getTileHeight() ))
+		if ((abs(camera->getX() - x*TILESIZE) < (camera->getScreenWidth()) + TILESIZE) &&
+			(abs(camera->getY() - y*TILESIZE) < (camera->getScreenHeight()) + TILESIZE))
 		{
 			int s = terrain.getTileMap()[i];
 			if (s != NULL_TILE)
 			{
-				renderer->renderSDLTexture(terrainSheet.getSpritesheet(), camera, x*terrain.getTileWidth(), y*terrain.getTileHeight(), terrain.getTileWidth(), terrain.getTileHeight(), terrainSheet.getSprite(s));
+				renderer->renderSDLTexture(terrainSheet.getSpritesheet(), camera, x*TILESIZE, y*TILESIZE, TILESIZE, TILESIZE, terrainSheet.getSprite(s));
 			}
 		}
 	}
 
 	//RENDER PLAYER
-	renderer->renderSDLRectangle();
+	renderer->renderSDLRectangle(camera, player.getX()*TILESIZE, player.getY()*TILESIZE, TILESIZE, TILESIZE);
 }

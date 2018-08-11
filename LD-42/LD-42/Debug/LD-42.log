@@ -1,49 +1,19 @@
-﻿  main.cpp
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(28): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(29): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(30): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(31): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(32): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(33): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(39): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  GameplayState.cpp
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(28): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(29): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(30): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(31): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(32): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(33): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(39): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gameplaystate.cpp(22): error C2660: 'Player::init': function does not take 6 arguments
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gameplaystate.cpp(123): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gameplaystate.cpp(139): error C2039: 'getCurrentAnimation': is not a member of 'Player'
-  c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\player.h(14): note: see declaration of 'Player'
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gameplaystate.cpp(139): error C2227: left of '->getFrame' must point to class/struct/union/generic type
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gameplaystate.cpp(139): error C2664: 'void Renderer::renderSDLTexture(SDL_Texture *,Camera *,int,int,int,int,SDL_Rect *,double,SDL_Point *,int,SDL_RendererFlip,Uint8,Uint8,Uint8)': cannot convert argument 7 from 'double' to 'SDL_Rect *'
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gameplaystate.cpp(143): error C2039: 'getCurrentAnimation': is not a member of 'Player'
-  c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\player.h(14): note: see declaration of 'Player'
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gameplaystate.cpp(143): error C2227: left of '->getFrame' must point to class/struct/union/generic type
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gameplaystate.cpp(143): error C2664: 'void Renderer::renderSDLTexture(SDL_Texture *,Camera *,int,int,int,int,SDL_Rect *,double,SDL_Point *,int,SDL_RendererFlip,Uint8,Uint8,Uint8)': cannot convert argument 7 from 'double' to 'SDL_Rect *'
+﻿  GameplayState.cpp
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gameplaystate.cpp(76): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  Compiling...
+  main.cpp
+  Utility.cpp
+  Terrain.cpp
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\terrain.cpp(21): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Spritesheet.cpp
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\spritesheet.cpp(37): warning C4101: 'newRect': unreferenced local variable
+  Renderer.cpp
+  Player.cpp
   GameStateManager.cpp
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(28): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(29): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(30): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(31): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(32): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(33): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(39): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
 c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gamestatemanager.cpp(20): warning C4018: '<': signed/unsigned mismatch
 c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gamestatemanager.cpp(32): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
 c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\main.cpp(90): warning C4715: 'init': not all control paths return a value
-  Compiling...
-  Player.cpp
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(28): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(29): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(30): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(31): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(32): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(33): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\entity.h(39): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\player.cpp(10): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  Generating Code...
+  LD-42.vcxproj -> C:\Users\Kush\Desktop\Ludum Dare\LD-42\LD-42\Debug\LD-42.exe
+  LD-42.vcxproj -> C:\Users\Kush\Desktop\Ludum Dare\LD-42\LD-42\Debug\LD-42.pdb (Partial PDB)

@@ -1,13 +1,11 @@
 #include "Player.h"
 
-bool Player::init(int X, int Y, int W, int H, double rotation)
+bool Player::init(int X, int Y)
 {
 	x = X;
 	y = Y;
-	w = W;
-	h = H;
 
-	baseWalkSpeed = 3.5;
+	movementTimer.initTimer(250);
 
 	initAnimations();
 
@@ -21,10 +19,6 @@ bool Player::initAnimations()
 
 void Player::update()
 {
-	//Will be pos if above or to the left of
-	x += xvel;
-	y += yvel;
-
 	switch (direction)
 	{
 	case UP:
@@ -44,49 +38,24 @@ void Player::update()
 		break;
 	}
 
-	if (yvel == 0 && xvel == 0)
+	movementTimer.checkTimer();
+	if (movementTimer.isTimerDone()) 
 	{
 		moving = false;
+
 	}
 }
 
 void Player::move(int dir)
 {
-	moving = true;
-	if (!shooting)
+	if (!moving)
 	{
-		direction = dir;
+		moving = true;
+		movementTimer.startTimer();
+		
+		int addX = 0;
+		int addY = 0;
 	}
-
-	if (dir == UP)
-	{
-		yvel = -baseWalkSpeed;
-	}
-
-	if (dir == DOWN)
-	{
-		yvel = baseWalkSpeed;
-	}
-
-	if (dir == LEFT)
-	{
-		xvel = -baseWalkSpeed;
-	}
-
-	if (dir == RIGHT)
-	{
-		xvel = baseWalkSpeed;
-	}
-}
-
-void Player::stopMovingX()
-{
-	xvel = 0;
-}
-
-void Player::stopMovingY()
-{
-	yvel = 0;
 }
 
 void Player::close() 

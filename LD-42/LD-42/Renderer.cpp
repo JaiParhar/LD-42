@@ -1,15 +1,5 @@
 #include "Renderer.h"
 
-Renderer::~Renderer()
-{
-
-}
-
-Renderer::Renderer()
-{
-
-}
-
 bool Renderer::init(SDL_Window* window) 
 {
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
@@ -70,10 +60,20 @@ void Renderer::setLogicalResolution(int width, int height)
 	SDL_RenderSetLogicalSize(renderer, width, height);
 }
 
-void Renderer::renderSDLRectangle(int x, int y, int w, int h, SDL_Color c)
+void Renderer::renderSDLRectangle(Camera* c, int x, int y, int w, int h, SDL_Color col)
+{
+	x -= (c->getX());
+	y -= (c->getY());
+	SDL_Rect renderRect = { x,y,w,h };
+	SDL_SetRenderDrawColor(renderer, col.r, col.g, col.b, col.a);
+	SDL_RenderFillRect(renderer, &renderRect);
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+}
+
+void Renderer::renderSDLRectangleOnScreen(int x, int y, int w, int h, SDL_Color col)
 {
 	SDL_Rect renderRect = { x,y,w,h };
-	SDL_SetRenderDrawColor(renderer, c.r, c.g, c.b, c.a);
+	SDL_SetRenderDrawColor(renderer, col.r, col.g, col.b, col.a);
 	SDL_RenderFillRect(renderer, &renderRect);
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 }
@@ -96,6 +96,10 @@ void Renderer::renderText(std::string text, int ID_Size, int x, int y, int w, in
 
 	renderSDLTextureOnScreen(textTexture, x, y, w, h);
 	SDL_DestroyTexture(textTexture);
+}
+
+void Renderer::close()
+{
 }
 
 SDL_Renderer* Renderer::get_SDL_Renderer()

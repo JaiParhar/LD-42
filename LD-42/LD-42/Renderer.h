@@ -15,8 +15,6 @@
 class Renderer
 {
 public:
-	Renderer();
-
 	SDL_Renderer* renderer;
 	
 	TTF_Font* textFont[4];
@@ -30,10 +28,9 @@ public:
 	void renderSDLTextureOnScreen(SDL_Texture* renderTexture, int x, int y, int w, int h, SDL_Rect* clip = NULL, double rot = 0.0, SDL_Point* center = NULL, int scale = 1, SDL_RendererFlip flip = SDL_FLIP_NONE);
 	void renderSDLTexture(SDL_Texture* renderTexture, Camera* c, int x, int y, int w, int h, SDL_Rect* clip = NULL, double rot = 0.0, SDL_Point* center = NULL, int scale = 1, SDL_RendererFlip flip = SDL_FLIP_NONE, Uint8 r = 255, Uint8 g = 255, Uint8 b = 255);
 	void setLogicalResolution(int width, int height);
-	void renderSDLRectangle(int x, int y, int w, int h, SDL_Color c = {0, 0, 0, 255});
+	void renderSDLRectangle(Camera* c, int x, int y, int w, int h, SDL_Color col = {0, 0, 0, 255});
+	void renderSDLRectangleOnScreen(int x, int y, int w, int h, SDL_Color col = { 0, 0, 0, 255 });
 	void renderText(std::string text, int ID_Size, int x, int y, int w = NULL, int h = NULL, SDL_Color c = {0, 0, 0, 255});
 	void close();
-
-	~Renderer();
 };
 

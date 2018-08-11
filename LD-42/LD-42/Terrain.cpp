@@ -5,8 +5,6 @@ bool Terrain::init(std::string fPath)
 	map = loadSurface(fPath);
 	width = map->w;
 	height = map->h;
-	tileWidth = 64;
-	tileHeight = 64;
 	loadTileMap();
 	return true;
 }
@@ -38,16 +36,6 @@ void Terrain::loadTileMap()
 int* Terrain::getTileMap()
 {
 	return tileMap;
-}
-
-int Terrain::getTileWidth()
-{
-	return tileWidth;
-}
-
-int Terrain::getTileHeight()
-{
-	return tileHeight;
 }
 
 int Terrain::getWidth()
