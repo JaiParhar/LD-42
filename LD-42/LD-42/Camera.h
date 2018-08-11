@@ -27,8 +27,8 @@ public:
 	void moveCameraScreen(int dir);
 	void update();
 
-	double getX() { return x*screenWidth; }
-	double getY() { return y*screenHeight; }
+	double getXPos() { return x*screenWidth; }
+	double getYPos() { return y*screenHeight; }
 	int getScreenWidth() { return screenWidth; }
 	int getScreenHeight() { return screenHeight; }
 };

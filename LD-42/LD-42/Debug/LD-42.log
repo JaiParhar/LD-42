@@ -1,3 +1,7 @@
-﻿  Camera.cpp
+﻿  Renderer.cpp
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\renderer.cpp(44): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\renderer.cpp(45): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\renderer.cpp(65): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\renderer.cpp(66): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
   LD-42.vcxproj -> C:\Users\Kush\Desktop\Ludum Dare\LD-42\LD-42\Debug\LD-42.exe
   LD-42.vcxproj -> C:\Users\Kush\Desktop\Ludum Dare\LD-42\LD-42\Debug\LD-42.pdb (Partial PDB)

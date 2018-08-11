@@ -89,8 +89,8 @@ void GameplayState::render()
 	{
 		int y = floor(i / terrain.getWidth());
 		int x = i % terrain.getWidth();
-		if ((abs(camera->getX() - x*TILESIZE) < (camera->getScreenWidth()) + TILESIZE) &&
-			(abs(camera->getY() - y*TILESIZE) < (camera->getScreenHeight()) + TILESIZE))
+		if ((abs(camera->getXPos() - x*TILESIZE) < (camera->getScreenWidth()) + TILESIZE) &&
+			(abs(camera->getYPos() - y*TILESIZE) < (camera->getScreenHeight()) + TILESIZE))
 		{
 			int s = terrain.getTileMap()[i];
 			if (s != NULL_TILE)

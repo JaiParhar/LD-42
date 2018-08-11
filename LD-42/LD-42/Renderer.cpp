@@ -41,8 +41,8 @@ void Renderer::renderSDLTextureOnScreen(SDL_Texture* renderTexture, int x, int y
 
 void Renderer::renderSDLTexture(SDL_Texture* renderTexture, Camera* c, int x, int y, int w, int h, SDL_Rect* clip, double rot, SDL_Point* center, int scale, SDL_RendererFlip flip, Uint8 r, Uint8 g, Uint8 b)
 {
-	x -= (c->getX());
-	y -= (c->getY());
+	x -= (c->getXPos());
+	y -= (c->getYPos());
 
 	w *= scale;
 	h *= scale;
@@ -62,8 +62,8 @@ void Renderer::setLogicalResolution(int width, int height)
 
 void Renderer::renderSDLRectangle(Camera* c, int x, int y, int w, int h, SDL_Color col)
 {
-	x -= (c->getX());
-	y -= (c->getY());
+	x -= (c->getXPos());
+	y -= (c->getYPos());
 	SDL_Rect renderRect = { x,y,w,h };
 	SDL_SetRenderDrawColor(renderer, col.r, col.g, col.b, col.a);
 	SDL_RenderFillRect(renderer, &renderRect);
