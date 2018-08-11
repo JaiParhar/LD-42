@@ -113,7 +113,17 @@ std::string parseBracketData(std::string line, int num)
 	return line;
 }
 
-int getTileID(std::string mapData, int x, int y) 
+std::string splitString(std::string s, std::string delimiter, int iteration, int size)
 {
-
+	size_t pos = 0;
+	std::string token;
+	for (int i = 0; i < iteration; i++) 
+	{
+		if ((pos = s.find(delimiter)) != std::string::npos) {
+			token = s.substr(0, pos);
+			s.erase(0, pos + delimiter.length());
+		}
+	}
+	if (iteration == size-1) { return s; }
+	return token;
 }

@@ -1,7 +1,4 @@
-﻿  main.cpp
-  Terrain.cpp
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\terrain.cpp(21): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  Generating Code...
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\main.cpp(90): warning C4715: 'init': not all control paths return a value
+﻿  Terrain.cpp
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\terrain.cpp(23): warning C4018: '<': signed/unsigned mismatch
   LD-42.vcxproj -> C:\Users\Kush\Desktop\Ludum Dare\LD-42\LD-42\Debug\LD-42.exe
   LD-42.vcxproj -> C:\Users\Kush\Desktop\Ludum Dare\LD-42\LD-42\Debug\LD-42.pdb (Partial PDB)

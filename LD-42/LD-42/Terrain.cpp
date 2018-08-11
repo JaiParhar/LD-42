@@ -2,24 +2,64 @@
 
 bool Terrain::init(std::string fPath)
 {
-	map = loadSurface(fPath);
-	width = map->w;
-	height = map->h;
-	loadTileMap();
+	width = 0;
+	height = 0;
+	loadTileMap(fPath);
 	return true;
 }
 
-void Terrain::loadTileMap()
+void Terrain::loadTileMap(std::string fPath)
 {
+	std::vector<std::string> lines;
+
+	std::ifstream mapFile(fPath);
+	std::string l;
+	while (std::getline(mapFile, l))
+	{
+		lines.push_back(l);
+	}
+	height = lines.size();
+
+	for (int i = 0; i < lines.at(0).size(); i++)
+	{
+		if (lines.at(0)[i] == ' ') 
+		{
+			++width;
+		}
+	}
+	width+=2;
+	
 	const static int W = width;
 	const static int H = height;
-
 	tileMap = new Tile*[W*H];
 
-	for (int i = 0; i < height*width; i++)
+	//Loading tilemaps from map data
+	for (int y = 0; y < height; y++) 
+	{
+		std::string currLine = lines.at(y);
+		for (int x = 0; x < width; x++) 
+		{
+			std::string id = splitString(currLine, " ", x, width);
+			printf("%s ", id.c_str());
+		}
+		printf("\n");
+	}
+
+
+
+
+	/*for (int i = 0; i < height*width; i++)
 	{
 		int y = floor(i / width);
 		int x = i % width;
+
+		
+
+
+
+
+
+
 
 		if (getPixelColor(map, x, y).r == 0 && getPixelColor(map, x, y).g == 255 && getPixelColor(map, x, y).b == 0)
 		{
@@ -38,7 +78,7 @@ void Terrain::loadTileMap()
 			a->addFrame(1);
 			tileMap[i]->init(x, y, a, true, NULL_TILE);
 		}
-	}
+	}*/
 }
 
 Tile** Terrain::getTileMap()
