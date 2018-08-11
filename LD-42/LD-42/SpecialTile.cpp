@@ -1,16 +1,11 @@
 #include "SpecialTile.h"
 
-void SpecialTile::init(int X, int Y, Animation* a, Animation* cA , bool col, void(*f)(SpecialTile* tile, bool first), int i)
+void SpecialTile::initCallback(Animation* cA, void(*f)(SpecialTile* tile, bool first))
 {
-	x = X;
-	y = Y;
-	animation = a;
 	callbackAnimation = cA;
-	collidable = col;
 	callback = f;
 	condition = false;
 	changedLastTick = false;
-	ID = i;
 }
 
 void SpecialTile::update()

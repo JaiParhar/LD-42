@@ -28,7 +28,7 @@ void Terrain::loadTileMap()
 			a->init(1000);
 			a->addFrame(0);
 			a->addFrame(2);
-			tileMap[i]->init(x, y, a, false, GRASS_TILE);
+			tileMap[i]->init(x, y, a, false, FLOOR_TILE);
 		}
 		else
 		{

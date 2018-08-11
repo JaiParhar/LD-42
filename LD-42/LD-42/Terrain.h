@@ -6,9 +6,11 @@
 #include <vector>
 #include "Utility.h"
 #include "Tile.h"
+#include "SpecialTile.h"
 
-#define NULL_TILE -1
-#define GRASS_TILE 0
+#define NULL_TILE 0
+#define FLOOR_TILE 1
+#define R_WALL_TILE 2
 
 class Terrain
 {

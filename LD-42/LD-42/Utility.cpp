@@ -112,3 +112,8 @@ std::string parseBracketData(std::string line, int num)
 	line.erase(cPos);
 	return line;
 }
+
+int getTileID(std::string mapData, int x, int y) 
+{
+
+}

@@ -10,7 +10,7 @@ public:
 	Animation* callbackAnimation;
 	void(*callback)(SpecialTile* tile, bool first);
 
-	void init(int X, int Y, Animation * a, Animation * cA, bool col, void(*f)(SpecialTile *tile, bool first), int i);
+	void initCallback(Animation * cA, void(*f)(SpecialTile *tile, bool first));
 	void update();
 
 	void setConditon(bool c);

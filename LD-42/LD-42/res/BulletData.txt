@@ -1,3 +1,0 @@
-BulletSpeed=10 Damage=1 SpriteID=0
-BulletSpeed=10 Damage=1 SpriteID=0
-BulletSpeed=10 Damage=1 SpriteID=0

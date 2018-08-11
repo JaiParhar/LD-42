@@ -22,3 +22,4 @@ Uint32 get_pixel32(SDL_Surface *surface, int x, int y);
 SDL_Color getPixelColor(SDL_Surface* img, int x, int y);
 std::string parseLine(std::string line, std::string getData);
 std::string parseBracketData(std::string line, int num);
+int getTileID(std::string mapData, int x, int y);
