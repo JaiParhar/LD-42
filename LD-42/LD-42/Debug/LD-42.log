@@ -1,15 +1,10 @@
-﻿  GameplayState.cpp
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gameplaystate.cpp(76): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+﻿  Player.cpp
   Generating Code...
   Compiling...
   main.cpp
-  Utility.cpp
-  Terrain.cpp
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\terrain.cpp(21): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  Spritesheet.cpp
-c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\spritesheet.cpp(37): warning C4101: 'newRect': unreferenced local variable
-  Renderer.cpp
-  Player.cpp
+  GameplayState.cpp
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gameplaystate.cpp(73): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gameplaystate.cpp(87): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   GameStateManager.cpp
 c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gamestatemanager.cpp(20): warning C4018: '<': signed/unsigned mismatch
 c:\users\kush\desktop\ludum dare\ld-42\ld-42\ld-42\gamestatemanager.cpp(32): warning C4018: '<': signed/unsigned mismatch

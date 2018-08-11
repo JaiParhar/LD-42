@@ -4,8 +4,8 @@
 class Entity
 {
 public:
-	int x;
-	int y;
+	double x;
+	double y;
 	int flip = SDL_FLIP_NONE;
 	
 	int scaleX = 1;
@@ -17,8 +17,8 @@ public:
 	void setX(int X) { x = X; }
 	void setY(int Y) { y = Y; }
 
-	int getX() { return x; }
-	int getY() { return y; }
+	double getX() { return x; }
+	double getY() { return y; }
 	int getFlip() { return flip; }
 
 	virtual void close() = 0;

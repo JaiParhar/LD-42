@@ -21,8 +21,6 @@ bool GameplayState::init(int* cS, Renderer* r, Camera* c)
 	terrain.init("./res/level_map.png");
 	player.init(0, 0);
 	
-	player.move(DOWN);
-	
 	inputM.init();
 
 	//music = Mix_LoadMUS("./res/GameMusic.mp3");
@@ -65,12 +63,11 @@ void GameplayState::update()
 {
 	player.update();
 
-	camera->setCameraCenterPos(0, 0);
+	camera->setCameraPos(0, 0);
 }
 void GameplayState::render()
 {
 	//RENDER TERRAIN
-	int k = 0;
 	for (int i = 0; i < terrain.getHeight() * terrain.getHeight(); i++)
 	{
 		int y = floor(i / terrain.getWidth());
