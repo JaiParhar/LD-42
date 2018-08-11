@@ -81,6 +81,9 @@ void GameplayState::update()
 {
 	player.update();
 	camera->update();
+
+	terrain.updateArea(0, 0, 5, 5);
+
 }
 void GameplayState::render()
 {
@@ -92,10 +95,10 @@ void GameplayState::render()
 		if ((abs(camera->getXPos() - x*TILESIZE) < (camera->getScreenWidth()) + TILESIZE) &&
 			(abs(camera->getYPos() - y*TILESIZE) < (camera->getScreenHeight()) + TILESIZE))
 		{
-			int s = terrain.getTileMap()[i];
-			if (s != NULL_TILE)
+			Tile* s = terrain.getTileMap()[i];
+			if (s->getID() != NULL_TILE)
 			{
-				renderer->renderSDLTexture(terrainSheet.getSpritesheet(), camera, x*TILESIZE, y*TILESIZE, TILESIZE, TILESIZE, terrainSheet.getSprite(s));
+				renderer->renderSDLTexture(terrainSheet.getSpritesheet(), camera, x*TILESIZE, y*TILESIZE, TILESIZE, TILESIZE, terrainSheet.getSprite(s->getAnimation()->getFrame()));
 			}
 		}
 	}

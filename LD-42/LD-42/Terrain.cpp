@@ -14,28 +14,41 @@ void Terrain::loadTileMap()
 	const static int W = width;
 	const static int H = height;
 
-	tileMap = new int[W*H];
+	tileMap = new Tile*[W*H];
 
 	for (int i = 0; i < height*width; i++)
 	{
 		int y = floor(i / width);
 		int x = i % width;
 
-		//printf("%d %d %d %d %d\n", x, y, getPixelColor(map, x, y).r, getPixelColor(map, x, y).g, getPixelColor(map, x, y).b);
 		if (getPixelColor(map, x, y).r == 0 && getPixelColor(map, x, y).g == 255 && getPixelColor(map, x, y).b == 0)
 		{
-			tileMap[i] = GRASS;
+			tileMap[i] = new Tile;
+			Animation* a = new Animation;
+			a->init(1000);
+			a->addFrame(0);
+			a->addFrame(2);
+			tileMap[i]->init(x, y, a, false, GRASS_TILE);
 		}
 		else
 		{
-			tileMap[i] = NULL_TILE;
+			tileMap[i] = new Tile;
+			Animation* a = new Animation;
+			a->init(10000);
+			a->addFrame(1);
+			tileMap[i]->init(x, y, a, true, NULL_TILE);
 		}
 	}
 }
 
-int* Terrain::getTileMap()
+Tile** Terrain::getTileMap()
 {
 	return tileMap;
+}
+
+Tile* Terrain::getTile(int x, int y)
+{
+	return tileMap[(y*width) + x];
 }
 
 int Terrain::getWidth()
@@ -46,4 +59,13 @@ int Terrain::getWidth()
 int Terrain::getHeight()
 {
 	return height;
+}
+
+void Terrain::updateArea(int x, int y, int w, int h)
+{
+	for (int Y = y; Y < y + h; Y++) {
+		for (int X = x; X < x + w; X++) {
+			tileMap[(Y*width) + X]->update();
+		}
+	}
 }

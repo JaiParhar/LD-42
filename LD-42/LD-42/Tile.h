@@ -1,6 +1,5 @@
 #pragma once
 #include "Animation.h"
-#include "Terrain.h"
 
 class Tile
 {
@@ -20,5 +19,6 @@ public:
 	bool isCollidable();
 	int getX();
 	int getY();
+	int getID();
 };
 

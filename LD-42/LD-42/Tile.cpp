@@ -33,3 +33,8 @@ int Tile::getY()
 {
 	return y;
 }
+
+int Tile::getID()
+{
+	return ID;
+}
