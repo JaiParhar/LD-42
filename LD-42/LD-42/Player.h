@@ -17,10 +17,9 @@ public:
 
 	int direction = 0;
 
-	bool shooting = false;
 	bool moving = false;
 
-	int movementSpeedMS = 125;
+	int movementSpeedMS;
 	Timer movementTimer;
 
 	Terrain* terrain;

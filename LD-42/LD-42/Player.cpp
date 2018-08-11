@@ -5,6 +5,8 @@ bool Player::init(int X, int Y)
 	x = X;
 	y = Y;
 
+	movementSpeedMS = 125;
+
 	movementTimer.initTimer(movementSpeedMS);
 
 	initAnimations();

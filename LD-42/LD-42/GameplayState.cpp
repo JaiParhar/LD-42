@@ -16,6 +16,7 @@ bool GameplayState::init(int* cS, Renderer* r, Camera* c)
 	terrainSheet.loadSpritesheet("./res/MapSpritesheet.png",
 		"./res/MapSpritesheetData.txt", renderer);
 
+	camera->setCameraPos(0, 0);
 	
 	//ONLY WORKS WITH 32 BIT IMAGES - MAKE SURE LEVEL IS 32 BIT
 	terrain.init("./res/level_map.png");
@@ -57,13 +58,29 @@ void GameplayState::input(SDL_Event* event)
 	{
 		player.move(RIGHT);
 	}
+
+	if (inputM.keyPressed[K_W])
+	{
+		camera->moveCameraScreen(UP);
+	}
+	else if (inputM.keyPressed[K_S]) 
+	{
+		camera->moveCameraScreen(DOWN);
+	}
+	else if (inputM.keyPressed[K_A])
+	{
+		camera->moveCameraScreen(LEFT);
+	}
+	else if (inputM.keyPressed[K_D])
+	{
+		camera->moveCameraScreen(RIGHT);
+	}
 }
 
 void GameplayState::update()
 {
 	player.update();
-
-	camera->setCameraPos(0, 0);
+	camera->update();
 }
 void GameplayState::render()
 {
