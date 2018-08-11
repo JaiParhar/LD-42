@@ -6,8 +6,8 @@ class Entity
 public:
 	double x;
 	double y;
-	int w, collisionWidth;
-	int h, collisionHeight;
+	int w;
+	int h;
 	double rot = 0.0;
 	int flip = SDL_FLIP_NONE;
 	double xvel = 0.0;
@@ -16,7 +16,7 @@ public:
 	int scaleX = 1;
 	int scaleY = 1;
 
-	virtual bool init(int X, int Y, int W, int H, int cW, int cH, double rotation = 0.0) = 0;
+	virtual bool init(int X, int Y, int W, int H, double rotation = 0.0) = 0;
 	virtual void update() = 0;
 
 	void setX(int X) { x = X; }
@@ -33,12 +33,10 @@ public:
 	int getCenterY() { return y+(getH()/2); }
 	int getW() { return w; }
 	int getH() { return h; }
-	int getCWidth() { return collisionWidth; }
-	int getCHeight() { return collisionHeight; }
 	double getAngle() { return rot; }
 	int getFlip() { return flip; }
 	
-	SDL_Rect* hitBox(int xvel = 0, int yvel = 0) { SDL_Rect* hitBox = new SDL_Rect; hitBox->x = x + xvel; hitBox->y = y + yvel; hitBox->w = collisionWidth; hitBox->h = collisionHeight; return hitBox; }
+	SDL_Rect* hitBox(int xvel = 0, int yvel = 0) { SDL_Rect* hitBox = new SDL_Rect; hitBox->x = x + xvel; hitBox->y = y + yvel; hitBox->w = w; hitBox->h = h; return hitBox; }
 
 	bool checkCollision(Entity* e, int xvel = 0, int yvel = 0)
 	{

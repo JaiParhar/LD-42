@@ -2,9 +2,7 @@
 
 void GameStateManager::initManager()
 {
-	gameStates.push_back(new Menu);
 	gameStates.push_back(new GameplayState);
-	gameStates.push_back(new GameOver);
 }
 
 void GameStateManager::closeManager()

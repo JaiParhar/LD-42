@@ -1,5 +1,5 @@
 #include <SDL.h>
-//#include <SDL_mixer.h>
+#include <SDL_mixer.h>
 #include <stdio.h>
 #include <iostream>
 #include <string.h>
@@ -12,7 +12,7 @@ const int WINDOW_HEIGHT = 572;
 
 const int SCREEN_WIDTH = 1280;
 const int SCREEN_HEIGHT = 720;
-const char * TITLE = "Farmland Invasion";
+const char * TITLE = "SUCCCCC";
 
 bool quit = false;
 
@@ -67,10 +67,10 @@ bool init()
 				return false; 
 			}
 			
-			//if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) 
-			//{
-			//	printf("SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError());
-			//}
+			if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) 
+			{
+				printf("SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError());
+			}
 
 			screenSurface = SDL_GetWindowSurface(window);
 			SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));

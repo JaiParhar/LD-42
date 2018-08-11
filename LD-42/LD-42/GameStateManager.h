@@ -2,8 +2,6 @@
 #include "Renderer.h"
 #include "GameState.h"
 #include "GameplayState.h"
-#include "Menu.h"
-#include "GameOver.h"
 #include <vector>
 
 class GameStateManager
